@@ -1,0 +1,37 @@
+/* Estilos API */
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    max-width: 960px; /* Ajusta el ancho máximo del contenedor según tus necesidades */
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  /* Estilos para la sección de países */
+  #apiDataContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .country-info {
+    width: calc(33.33% - 20px); /* 33.33% del ancho total menos el espacio entre columnas */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .country-info img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+    

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Vuelos</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/logo.ico" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Dafecruz</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="paises.html">Paises</a></li>
+                        <li class="nav-item"><a class="nav-link" href="vuelos.html">Vuelos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+
+            header {
+                background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+                color: #fff;
+                text-align: center;
+                padding: 0.em;
+            }
+
+            section {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                padding: 20px;
+            }
+
+            .flight-card {
+                width: 300px;
+                margin: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+            }
+
+            .flight-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            .flight-info {
+                padding: 15px;
+            }
+
+            h2,
+            p {
+                margin: 0;
+            }
+
+            .price {
+                font-size: 24px;
+                color: #007BFF;
+                margin-top: 10px;
+            }
+
+            .marquee-container {
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            .marquee-container p {
+                display: inline-block;
+                margin-right: 50px;
+                /* Ajusta el espaciado entre los destinos */
+                animation: marquee 65s linear infinite;
+                /* Ajusta la velocidad de la animación */
+            }
+
+            @keyframes marquee {
+                0% {
+                    transform: translateX(100%);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+
+            .flight-card {
+                width: 300px;
+                margin: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.3s ease-in-out;
+                /* Agregamos una transición para suavizar la ampliación */
+            }
+
+            .flight-card:hover {
+                transform: scale(1.1);
+                /* Ampliamos la tarjeta al pasar el mouse */
+            }
+
+            .plane {
+                position: relative;
+                cursor: pointer;
+                width: 270px;
+                height: 160px;
+                left: 0;
+                transition: left 5s cubic-bezier(0, 0, 1, 1);
+            }
+
+            #iframe-container {
+                max-width: 1500px;
+                width: 100%;
+                height: 300px;
+                /* Ajusta la altura según tus necesidades */
+            }
+
+            #iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        </style>
+        </head>
+
+        <body>
+            <header>
+                <h1>Promociones de Vuelos</h1>
+            </header>
+
+            <div class="marquee-container">
+                <p>Destinos nacionales: Bogotá, Cartagena, Medellín, Cali, Barranquilla, Santa Marta, Pereira,
+                    Manizales, Armenia, San Andrés Destinos internacionales: Nueva York, Estados Unidos - París, Francia
+                    - Tokio, Japón - Barcelona,
+                    España - Río de Janeiro, Brasil - Sydney, Australia - Roma, Italia - Vancouver, Canadá - Bangkok,
+                    Tailandia - Ciudad del Cabo, Sudáfrica</p>
+            </div>
+            <section id="flight-list">
+                <!-- Agregar más vuelos con sus respectivas imágenes y precios -->
+                <div class="flight-card" onmouseover="enlargeCard(this)" onmouseout="resetCard(this)">
+                    <img src="assets/costa.png" alt="Vuelo costa">
+                    <div class="flight-info">
+                        <h2>Costa colombiana</h2>
+                        <p>¡Descubre la costa de tu país!</p>
+                        <p class="price">Desde: $96.000</p>
+                    </div>
+                </div>
+
+                <div class="flight-card" onmouseover="enlargeCard(this)" onmouseout="resetCard(this)">
+                    <img src="assets/nacionales.png" alt="Vuelo Nacional">
+                    <div class="flight-info">
+                        <h2>Vuelo Nacional</h2>
+                        <p>¡Descubre tu propio país!</p>
+                        <p class="price">Desde: $184.000</p>
+                    </div>
+                </div>
+
+                <div class="flight-card" onmouseover="enlargeCard(this)" onmouseout="resetCard(this)">
+                    <img src="assets/Inter.png" alt="Vuelo Internacional">
+                    <div class="flight-info">
+                        <h2>Vuelo Internacional</h2>
+                        <p>¡Explora el mundo!</p>
+                        <p class="price">Desde: $1'320.000</p>
+                    </div>
+                </div>
+            </section>
+
+            <script>
+                function enlargeCard(card) {
+                    card.style.transform = "scale(1.1)";
+                }
+
+                function resetCard(card) {
+                    card.style.transform = "scale(1)";
+                }
+
+                function movePlane() {
+                    const plane = document.querySelector('.plane');
+                    plane.style.left = '80%';
+                }
+            </script>
+        </body>
+
+</html>
+
+
+
+<img class="plane" src="assets/a380.png" onclick="movePlane()">
+<br><br><br>
+
+<header>
+    <h1>Aliados</h1>
+</header>
+
+<iframe src="slider.html" width="1400" height="200"></iframe>
+
+<div id="iframe-container" class="p-3 border rounded">
+   
+    <header>
+        <h1>Comunicación entre iframe y página principal</h1>
+    </header>
+    <iframe id="iframe" src="iframe.html"></iframe>
+</div>
+
+</main>
+<!-- Footer-->
+<footer class="bg-white py-4 mt-auto">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto">
+                <div class="small m-0">Copyright &copy; Your Website 2024</div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+</body>
+
+</html>
